@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Welcome to the Reminder Application {{username}}</h3>
+
+    <p id="currentDate"></p>
+
+    <script>
+        // Get the current date
+        var currentDate = new Date();
+
+        // Create an array of day names
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // Get the day of the week (0-6) and use it to retrieve the day name
+        var dayName = days[currentDate.getDay()];
+
+        // Format the date
+        // Format the date to display the full day name and date
+        // Create an array of month names
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // Format the date to display the full day name and date with the month as a string
+        var formattedDate = dayName + ", " + currentDate.getDate() + "th of " + months[currentDate.getMonth()] + " " + currentDate.getFullYear();
+
+        // Display the formatted date in the HTML element
+        document.getElementById("currentDate").textContent = formattedDate;
+    </script>
+
+    <div>
+        <a href="{% url 'set-reminder' %}">Set Reminder</a>
+    </div>
+    <div>
+        <a href="{% url 'modify-reminder' %}">Modify Reminder</a>
+    </div>
+    <div>
+        <a href="{% url 'delete-reminder' %}">Delete Reminder</a>
+    </div>
+    <div>
+        <a href="{% url 'enable-reminder' %}">Enable Reminder</a>
+    </div>
+    <div>
+        <a href="{% url 'view-reminders' %}">View Reminder</a>
+    </div>
+    
+    
+</body>
+
+</html>

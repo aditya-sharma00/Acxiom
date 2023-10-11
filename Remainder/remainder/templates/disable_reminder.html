@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your header content here -->
+</head>
+<body>
+    <h3>Disable Reminder</h3>
+    <p>Click the button below to disable your reminder.</p>
+    <form action="{% url 'disable-reminder' %}" method="post">
+        {% csrf_token %}
+        <!-- Add form fields or information for disabling the reminder here -->
+        <button type="submit">Disable Reminder</button>
+    </form>
+</body>
+</html>

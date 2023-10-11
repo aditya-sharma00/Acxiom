@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your header content here -->
+</head>
+<body>
+    <h3>Enable Reminder</h3>
+    <p>Click the button below to enable your reminder.</p>
+    <form action="{% url 'enable-reminder' %}" method="post">
+        {% csrf_token %}
+        <!-- Add form fields or information for enabling the reminder here -->
+        <button type="submit">Enable Reminder</button>
+    </form>
+</body>
+</html>
